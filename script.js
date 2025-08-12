@@ -11,12 +11,13 @@ document.getElementById("student-form").addEventListener("submit", function(e) {
     let student = { name, rollno, className, contact };
     students.push(student);
     localStorage.setItem("students", JSON.stringify(students));
+    // alert("Student Has Added");
     this.reset();
 
     displayStudents();
 });
 
-function displayStudents() {
+function displayStudents(list=students) {
     let tablebody = document.querySelector("#studentTable tbody");
     tablebody.innerHTML = "";
     students.forEach((student, index) => {
@@ -54,3 +55,20 @@ function editStudent(index) {
 
 // Initial display
 displayStudents();
+
+document.getElementById("searchInput").addEventListener("keyup", function(){
+
+   let query= this.value.toLowerCase();
+
+   let filterestudent= students.filter(student=>
+   {
+    return (
+        student.name.toLowerCase().includes(query)||
+        student.rollno.toLowerCase().includes(query)
+    );
+   });
+   
+   displayStudents(filterestudent)
+
+});
+

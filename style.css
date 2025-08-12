@@ -35,3 +35,8 @@ th, td {
 button {
     cursor: pointer;
 }
+.search
+{
+    display: flex;
+    justify-content: center;
+}

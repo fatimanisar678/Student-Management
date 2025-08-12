@@ -28,8 +28,8 @@ function displayStudents(list=students) {
              <td>${student.className}</td>
              <td>${student.contact}</td>
              <td>
-               <button onclick="editStudent(${index})">Edit</button>
-               <button onclick="deleteStudent(${index})">Delete</button>
+               <button  onclick="editStudent(${index})  "style="background-color: rgb(170, 37, 37); color: white; border: none;" >Edit</button>
+               <button onclick="deleteStudent(${index})   "  style="background-color: rgb(15, 14, 14); color: white; border: none;">Delete</button>
              </td>
            </tr>
         `;
